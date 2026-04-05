@@ -4,22 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARCHON V4 | The Neuro-Symbolic Agentic OS</title>
+
+    <!-- Primary SEO -->
+    <meta name="description" content="Archon is the neuro-symbolic knowledge OS that transforms technical documents into certifiable, auditable, executable knowledge. Zero-hallucination AI for critical industries.">
+    <meta name="keywords" content="neuro-symbolic AI, knowledge graph, agentic OS, explainable AI, enterprise AI, symbolic reasoning, compliance AI, knowledge operating system">
+    <meta name="author" content="Archon Neuro-Symbolic Intelligence">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://www.archon-nesy.com/">
+
+    <!-- Open Graph / LinkedIn / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.archon-nesy.com/">
+    <meta property="og:title" content="ARCHON V4 — The Neuro-Symbolic Agentic OS">
+    <meta property="og:description" content="Transform technical documents into certifiable, auditable knowledge. Where LLMs extract meaning, Archon validates and executes it.">
+    <meta property="og:image" content="https://www.archon-nesy.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Archon V4 Neuro-Symbolic Knowledge OS — architecture overview">
+    <meta property="og:site_name" content="Archon Neuro-Symbolic AI">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ARCHON V4 — The Neuro-Symbolic Agentic OS">
+    <meta name="twitter:description" content="Zero-hallucination AI for critical industries. Every fact is forensically certified, every rule compiled to executable logic.">
+    <meta name="twitter:image" content="https://www.archon-nesy.com/og-image.png">
+    <meta name="twitter:image:alt" content="Archon V4 knowledge graph visualization">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Archon V4",
+        "description": "The neuro-symbolic agentic OS that transforms technical documents into certifiable, auditable, executable knowledge graphs.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "creator": {
+            "@type": "Organization",
+            "name": "Archon Neuro-Symbolic Intelligence",
+            "url": "https://www.archon-nesy.com"
+        }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#1a2332">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-cream: #fbfaf6;
             --neural-blue: #376d9b;
+            --neural-blue-dark: #1a2332;
             --symbolic-gold: #c98e3b;
             --text-dark: #1f2937;
             --text-gray: #4b5563;
             --border-light: #e5e7eb;
         }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
             background-color: var(--bg-cream);
             font-family: 'IBM Plex Sans', sans-serif;
@@ -27,108 +78,366 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
-        /* Utilities */
+
+        /* ===== ACCESSIBILITY ===== */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--neural-blue);
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 600;
+            z-index: 9999;
+            text-decoration: none;
+            transition: top 0.2s ease;
+        }
+        .skip-link:focus {
+            top: 1rem;
+        }
+
+        *:focus {
+            outline: none;
+        }
+        *:focus-visible {
+            outline: 2px solid var(--symbolic-gold);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ===== UTILITIES ===== */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 5%;
         }
+
         .text-mono {
             font-family: 'IBM Plex Mono', monospace;
         }
+
         .badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             border: 1px solid var(--symbolic-gold);
             color: var(--symbolic-gold);
             padding: 0.5rem 1rem;
-            border-radius: 4px;
+            border-radius: 999px;
             font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 1.5rem;
         }
-        /* Header */
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--symbolic-gold);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(201, 142, 59, 0.5); }
+            50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(201, 142, 59, 0); }
+        }
+
+        /* ===== HEADER ===== */
         header {
             padding: 1.5rem 0;
             border-bottom: 1px solid var(--border-light);
             background: rgba(251, 250, 246, 0.9);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 50;
         }
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
             font-size: 1.4rem;
             font-weight: 700;
             color: var(--neural-blue);
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
         .logo span {
             color: var(--symbolic-gold);
+            font-weight: 400;
+            font-size: 0.85em;
+            letter-spacing: 0;
         }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        nav a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        nav a:hover {
+            color: var(--neural-blue);
+        }
+
         .contact-btn {
             background: var(--neural-blue);
             color: white;
             padding: 0.6rem 1.5rem;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: 600;
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(55, 109, 155, 0.2);
         }
         .contact-btn:hover {
             opacity: 0.9;
+            box-shadow: 0 4px 12px rgba(55, 109, 155, 0.3);
+            transform: translateY(-1px);
         }
-        /* Hero Section */
+
+        /* ===== HERO ===== */
         .hero {
-            padding: 8rem 0;
+            padding: 8rem 0 6rem;
             text-align: center;
             position: relative;
-            background-image: url('bg.png'); /* To be provided by user */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            overflow: hidden;
+            background: var(--neural-blue-dark);
+            color: white;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
         }
-        .hero::before {
-            content: '';
+
+        /* Animated background orbs */
+        .hero-bg {
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(rgba(251, 250, 246, 0.7), rgba(251, 250, 246, 0.95));
-            z-index: 1;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
         }
+
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            will-change: transform;
+        }
+        .hero-orb--1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(55, 109, 155, 0.6) 0%, transparent 70%);
+            top: -15%;
+            left: -10%;
+            animation: float-1 18s ease-in-out infinite;
+        }
+        .hero-orb--2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201, 142, 59, 0.4) 0%, transparent 70%);
+            top: 30%;
+            right: -10%;
+            animation: float-2 22s ease-in-out infinite;
+        }
+        .hero-orb--3 {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(55, 109, 155, 0.35) 0%, transparent 70%);
+            bottom: -10%;
+            left: 30%;
+            animation: float-3 20s ease-in-out infinite;
+        }
+
+        @keyframes float-1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(60px, 40px) scale(1.1); }
+            66% { transform: translate(-30px, 80px) scale(0.95); }
+        }
+        @keyframes float-2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-50px, 60px) scale(0.9); }
+            66% { transform: translate(40px, -40px) scale(1.05); }
+        }
+        @keyframes float-3 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(70px, -50px) scale(1.1); }
+            66% { transform: translate(-60px, 30px) scale(0.9); }
+        }
+
+        /* Subtle grid overlay */
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 60% 55% at 50% 50%, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 60% 55% at 50% 50%, black 40%, transparent 100%);
+        }
+
         .hero-content {
             position: relative;
             z-index: 2;
             max-width: 800px;
             margin: 0 auto;
+            width: 100%;
         }
+
+        .hero .badge {
+            border-color: rgba(201, 142, 59, 0.5);
+            background: rgba(201, 142, 59, 0.08);
+        }
+
         .hero h1 {
-            font-size: 4.5rem;
-            color: var(--neural-blue);
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            color: white;
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 1.5rem;
             letter-spacing: -1px;
-            text-shadow: 2px 2px 4px rgba(251, 250, 246, 0.9);
         }
+
+        .hero-gradient-text {
+            background: linear-gradient(135deg, #7db4d8, #c98e3b, #7db4d8);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 6s ease-in-out infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
         .hero p {
-            font-size: 1.5rem;
-            color: var(--text-gray);
+            font-size: clamp(1.05rem, 2vw, 1.35rem);
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 2.5rem;
-            text-shadow: 2px 2px 4px rgba(251, 250, 246, 0.9);
             font-weight: 400;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
         }
-        /* Architecture Section (How it Works) */
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--symbolic-gold), #d9a04a);
+            color: var(--neural-blue-dark);
+            padding: 0.85rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(201, 142, 59, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(201, 142, 59, 0.4);
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 0.85rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+        }
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Hero stats bar */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-value {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--symbolic-gold);
+        }
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.25rem;
+        }
+
+        /* ===== ARCHITECTURE SECTION ===== */
         .architecture {
             padding: 6rem 0;
             background-color: white;
             border-bottom: 1px solid var(--border-light);
         }
+
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
@@ -137,65 +446,252 @@
             margin-right: auto;
         }
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
             color: var(--neural-blue);
             margin-bottom: 1rem;
+            letter-spacing: -0.5px;
         }
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            gap: 2rem;
         }
+
         .card {
             background: var(--bg-cream);
             padding: 2.5rem;
-            border-radius: 8px;
+            border-radius: 12px;
             border-top: 4px solid var(--neural-blue);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
         .card:nth-child(2) { border-color: var(--symbolic-gold); }
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.08);
         }
+
         .card-icon {
-            font-size: 2rem;
-            color: var(--neural-blue);
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
             margin-bottom: 1.5rem;
-            font-family: 'IBM Plex Mono', monospace;
+            color: var(--neural-blue);
+            background: rgba(55, 109, 155, 0.08);
+            border: 1px solid rgba(55, 109, 155, 0.12);
         }
+        .card:nth-child(2) .card-icon {
+            color: var(--symbolic-gold);
+            background: rgba(201, 142, 59, 0.08);
+            border-color: rgba(201, 142, 59, 0.12);
+        }
+
         .card h3 {
             font-size: 1.3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             color: var(--text-dark);
         }
         .card p {
             color: var(--text-gray);
+            line-height: 1.7;
         }
-        /* Scale & Resilience Section (API Validation for Google) */
+
+        /* ===== RESILIENCE SECTION ===== */
         .resilience {
             padding: 6rem 0;
-            background: var(--neural-blue);
+            background: var(--neural-blue-dark);
             color: white;
+            position: relative;
+            overflow: hidden;
         }
-        .resilience h2 {
-            color: white;
+
+        .resilience::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 30%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 30%, transparent 80%);
+            pointer-events: none;
         }
+
+        .resilience .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .resilience h2 { color: white; }
+        .resilience .section-header p { color: rgba(255, 255, 255, 0.65); }
+
         .resilience .card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.04);
             border-top: none;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             color: white;
         }
+        .resilience .card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
         .resilience .card h3 { color: white; }
-        .resilience .card p { color: rgba(255,255,255,0.8); }
-        .resilience .card-icon { color: var(--symbolic-gold); }
-        /* Team Section */
+        .resilience .card p { color: rgba(255, 255, 255, 0.7); }
+        .resilience .card-icon {
+            color: var(--symbolic-gold);
+            background: rgba(201, 142, 59, 0.1);
+            border-color: rgba(201, 142, 59, 0.2);
+        }
+
+        /* ===== USE CASES SECTION ===== */
+        .use-cases {
+            padding: 6rem 0;
+            background: var(--bg-cream);
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .use-case-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .use-case-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.08);
+            border-color: var(--neural-blue);
+        }
+
+        .use-case-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 1.25rem;
+            background: rgba(55, 109, 155, 0.08);
+            color: var(--neural-blue);
+            border: 1px solid rgba(55, 109, 155, 0.1);
+        }
+        .use-case-card:nth-child(2) .use-case-icon {
+            background: rgba(16, 185, 129, 0.08);
+            color: #10b981;
+            border-color: rgba(16, 185, 129, 0.1);
+        }
+        .use-case-card:nth-child(3) .use-case-icon {
+            background: rgba(139, 92, 246, 0.08);
+            color: #8b5cf6;
+            border-color: rgba(139, 92, 246, 0.1);
+        }
+
+        .use-case-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+        .use-case-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .use-case-list {
+            list-style: none;
+            padding: 0;
+        }
+        .use-case-list li {
+            padding: 0.3rem 0 0.3rem 1.25rem;
+            position: relative;
+            font-size: 0.875rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+        .use-case-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.65rem;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--neural-blue);
+        }
+        .use-case-card:nth-child(2) .use-case-list li::before { background: #10b981; }
+        .use-case-card:nth-child(3) .use-case-list li::before { background: #8b5cf6; }
+
+        /* ===== COMPARISON TABLE ===== */
+        .comparison {
+            padding: 6rem 0;
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .comparison-table thead th {
+            background: var(--neural-blue-dark);
+            color: white;
+            padding: 1rem 1.25rem;
+            text-align: left;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .comparison-table thead th:first-child {
+            border-radius: 8px 0 0 0;
+        }
+        .comparison-table thead th:last-child {
+            border-radius: 0 8px 0 0;
+        }
+        .comparison-table td {
+            padding: 0.85rem 1.25rem;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+        .comparison-table tbody tr:hover {
+            background: rgba(55, 109, 155, 0.03);
+        }
+        .comparison-table td:first-child {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        .check { color: #10b981; font-weight: 700; }
+        .cross { color: #ef4444; font-weight: 700; }
+
+        /* ===== TEAM SECTION ===== */
         .team {
             padding: 6rem 0;
             background-color: var(--bg-cream);
         }
+
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -203,18 +699,21 @@
             max-width: 800px;
             margin: 0 auto;
         }
+
         .team-member {
             background: white;
             padding: 3rem 2rem;
-            border-radius: 8px;
+            border-radius: 12px;
             text-align: center;
             border: 1px solid var(--border-light);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
         }
         .team-member:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.08);
         }
+
         .avatar {
             width: 100px;
             height: 100px;
@@ -230,11 +729,13 @@
             font-family: 'IBM Plex Mono', monospace;
             font-weight: 600;
         }
+
         .team-member h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
             color: var(--text-dark);
         }
+
         .team-title {
             color: var(--symbolic-gold);
             font-weight: 600;
@@ -243,6 +744,7 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
+
         .linkedin-link {
             display: inline-block;
             margin-top: 1rem;
@@ -250,22 +752,68 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
+            transition: color 0.2s ease;
         }
-        .linkedin-link:hover { text-decoration: underline; }
-        /* Footer */
+        .linkedin-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            padding: 6rem 0;
+            background: var(--neural-blue-dark);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 142, 59, 0.15) 0%, transparent 70%);
+            top: -30%;
+            right: -10%;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .cta-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== FOOTER ===== */
         footer {
-            background: var(--text-dark);
+            background: #111827;
             color: #9ca3af;
             padding: 4rem 0 2rem;
             text-align: center;
         }
+
         .footer-logo {
             font-size: 1.5rem;
             color: white;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
-        
+
         .footer-links {
             margin: 2rem 0;
         }
@@ -273,126 +821,453 @@
             color: #d1d5db;
             margin: 0 1rem;
             text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
         }
-        .footer-links a:hover { color: white; }
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            margin-top: 3rem;
+            color: #6b7280;
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-            .hero p { font-size: 1.2rem; }
+            .hero { padding: 5rem 0 4rem; min-height: auto; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.05rem; }
             .grid-3 { grid-template-columns: 1fr; }
+            .use-cases-grid { grid-template-columns: 1fr; }
+            .hero-stats { gap: 1.5rem; }
+            nav { display: none; }
+            .comparison-table { font-size: 0.8rem; }
+            .comparison-table td, .comparison-table th { padding: 0.6rem 0.75rem; }
+        }
+
+        @media (forced-colors: active) {
+            .btn-primary, .btn-ghost, .contact-btn {
+                border: 2px solid ButtonText;
+            }
+            .hero-gradient-text {
+                -webkit-text-fill-color: unset;
+                background: none;
+                color: LinkText;
+            }
         }
     </style>
 </head>
 <body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header -->
     <header>
         <div class="container header-content">
-            <div class="logo">ARCHON<span>::</span>NESY</div>
-            <a href="mailto:contact@archon-nesy.com" class="contact-btn">Request Alpha Access</a>
+            <div class="logo">ARCHON <span>Neuro-Symbolic AI</span></div>
+            <nav aria-label="Primary navigation">
+                <a href="#why-archon">Why Archon</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#use-cases">Use Cases</a>
+                <a href="#team">Team</a>
+            </nav>
+            <a href="mailto:contact@archon-nesy.com" class="contact-btn">Request Access</a>
         </div>
     </header>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="badge text-mono">DOMAIN AGNOSTIC</div>
-            <h1>The Neuro-Symbolic Agentic OS</h1>
-            <p>Where neural inference meets high-fidelity deterministic constraints. Your documents become certifiable, traceable, and executable knowledge.</p>
-        </div>
-    </section>
-    <!-- Architecture Section -->
-    <section id="architecture" class="architecture">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge text-mono" style="border-color: var(--neural-blue); color: var(--neural-blue);">Architecture</span>
-                <h2>Zero-Hallucination Framework</h2>
-                <p>Archon V4 is engineered from the ground up for critical sectors. We decouple generation from validation, ensuring mathematical conformity via symbolic graphs.</p>
+
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section class="hero" aria-label="Introduction">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-orb hero-orb--1"></div>
+                <div class="hero-orb hero-orb--2"></div>
+                <div class="hero-orb hero-orb--3"></div>
+                <div class="hero-grid"></div>
             </div>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon">{ ; }</div>
-                    <h3>Event-Driven Blackboard</h3>
-                    <p>A mission-critical Sovereign Bus operating entirely on Redis. The Pilot and Agent Swarm communicate asynchronously in a tightly managed, decoupled topology.</p>
+            <div class="container hero-content">
+                <div class="badge text-mono">
+                    <span class="badge-dot" aria-hidden="true"></span>
+                    Domain Agnostic
                 </div>
-                <div class="card">
-                    <div class="card-icon">&lt;///i&gt;</div>
-                    <h3>Conformity Engine V4</h3>
-                    <p>Our strictly symbolic validation layer. By mapping LLM logic into rigid Neo4j data graphs, we guarantee structural sanitization and eliminate logic drift.</p>
+                <h1>The Neuro-Symbolic<br><span class="hero-gradient-text">Agentic OS</span></h1>
+                <p>Where neural inference meets deterministic validation. Your documents become certifiable, traceable, and executable knowledge.</p>
+
+                <div class="hero-cta">
+                    <a href="mailto:contact@archon-nesy.com" class="btn-primary">
+                        Request Early Access
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#architecture" class="btn-ghost">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        See How It Works
+                    </a>
                 </div>
-                <div class="card">
-                    <div class="card-icon">_*></div>
-                    <h3>Multi-Tier Swarm</h3>
-                    <p>Deploy heavy-duty autonomous agents (Librarian, Logician, Weaver) working in Sequential-Parallel orchestration patterns to handle complex reasoning tasks.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Scalability & Tech Section -->
-    <section class="resilience">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge text-mono" style="border-color: white; color: white;">Cloud Native</span>
-                <h2>Built for Massive AI Scale</h2>
-                <p>Designed for heavy enterprise workloads, demanding peak computational efficiency and robust error handling against massive LLM token consumption.</p>
-            </div>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon">[ ⚡ ]</div>
-                    <h3>Wave Architecture</h3>
-                    <p>Optimized concurrency. Operations are processed in dynamic computational "Waves", filling factors strictly aligned with API rate limits for 100% throughput utilization.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">[ 🛡️ ]</div>
-                    <h3>CB-Aware Deferral</h3>
-                    <p>Advanced resilience against HTTP 429 Quota Saturations. Dynamic circuit breakers allow the Swarm to honestly defer and self-heal during API storms.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">[ 📊 ]</div>
-                    <h3>1080° Micro-Forensics</h3>
-                    <p>NASA-grade validation. Every action, graph mutation, and agent inference is fully documented, tracked via Identity Maps, and auditable across 10 distinct vectors.</p>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value text-mono">5,000+</div>
+                        <div class="hero-stat-label">Unit Types Supported</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value text-mono">93.6%</div>
+                        <div class="hero-stat-label">Logic Compilation Rate</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value text-mono">100%</div>
+                        <div class="hero-stat-label">On-Premise Deployment</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value text-mono">0</div>
+                        <div class="hero-stat-label">Silent Hallucinations</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Team Section -->
-    <section id="team" class="team">
-        <div class="container">
-            <div class="section-header">
-                <h2>The Founding Team</h2>
-                <p>We are a DeepTech startup bridging the gap between Neural Networks and Classical Symbolic Logic.</p>
-            </div>
-            <div class="team-grid">
-                <!-- CEO -->
-                <div class="team-member">
-                    <div class="avatar text-mono">SM</div>
-                    <h3>Soufiane Moudden</h3>
-                    <div class="team-title text-mono">Chief Executive Officer</div>
-                    <p style="color: var(--text-gray); font-size: 0.9rem;">Spearheading Archon's vision to bring zero-hallucination agentic intelligence to domain-agnostic enterprise critical sectors.</p>
+        </section>
+
+        <!-- Why Choose Archon Section -->
+        <section id="why-archon" class="architecture" aria-labelledby="why-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge text-mono">
+                        <span class="badge-dot" aria-hidden="true"></span>
+                        Why Archon
+                    </span>
+                    <h2 id="why-heading">Why Choose Archon?</h2>
+                    <p>Most AI tools generate text. Archon generates <strong>certified knowledge</strong>. We separate what the AI extracts from what the system validates, so nothing enters your knowledge base without proof.</p>
                 </div>
-                
-                <!-- CTO -->
-                <div class="team-member">
-                    <div class="avatar text-mono">HM</div>
-                    <h3>Houssine Meftoul</h3>
-                    <div class="team-title text-mono">Chief Technology Officer</div>
-                    <p style="color: var(--text-gray); font-size: 0.9rem;">Lead Architect of the Conformity Engine V4 and the Event-Driven Blackboard Swarm Orchestration.</p>
-                    <a href="https://www.linkedin.com/in/houssine-meftoul-59120276" class="linkedin-link" target="_blank" rel="noopener noreferrer">LinkedIn Profile &rarr;</a>
+
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
+                            </svg>
+                        </div>
+                        <h3>Zero-Hallucination Guarantee</h3>
+                        <p>Every piece of information extracted by the AI is independently validated by a symbolic engine before entering your knowledge base. Unverified facts are quarantined, never injected silently.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                        </div>
+                        <h3>Executable, Not Descriptive</h3>
+                        <p>Natural-language rules don't stay as text. They are compiled into deterministic, machine-evaluable logic with a 93.6% success rate. Your knowledge becomes actionable, testable, and auditable.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <path d="M14 2v6h6"/>
+                                <path d="M9 15l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <h3>Audit-Ready From Day One</h3>
+                        <p>Every fact carries cryptographic proof of origin: which document, which page, which extraction step, when. Full decision lineage from source to knowledge, ready for compliance auditors.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Architecture & Technology Section -->
+        <section id="architecture" class="architecture" style="background: var(--bg-cream);" aria-labelledby="arch-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge text-mono" style="border-color: var(--neural-blue); color: var(--neural-blue);">
+                        <span class="badge-dot" style="background: var(--neural-blue);" aria-hidden="true"></span>
+                        Architecture &amp; Technology
+                    </span>
+                    <h2 id="arch-heading">Under the Hood</h2>
+                    <p>Archon is built on a battle-tested event-driven architecture with a formal ontological backbone. Here's how it works.</p>
+                </div>
+
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>Event-Driven Blackboard</h3>
+                        <p>A mission-critical Sovereign Bus on Redis Streams. Pilot and Agent Swarm communicate asynchronously in a fully decoupled, fault-tolerant topology with DLQ, heartbeat monitoring, and graceful recovery.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
+                                <path d="M12 6v2"/>
+                                <path d="M12 16v2"/>
+                            </svg>
+                        </div>
+                        <h3>Conformity Engine &amp; Ontology</h3>
+                        <p>LLM outputs are validated against a Neo4j knowledge graph governed by universal ontological relations aligned to ISO, BFO, PROV-O &amp; QUDT. HMAC forensic signatures guarantee structural integrity. Zero logic drift.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="5" r="3"/>
+                                <circle cx="5" cy="19" r="3"/>
+                                <circle cx="19" cy="19" r="3"/>
+                                <path d="M12 8v3l-5 5"/>
+                                <path d="M12 11l5 5"/>
+                            </svg>
+                        </div>
+                        <h3>Multi-Tier Agent Swarm</h3>
+                        <p>Specialized agents orchestrated in sequential-parallel patterns : extraction, compilation into LogicAST, and relation inference. Each agent is a generic shell hydrated from the graph at runtime.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scale & Resilience Section -->
+        <section class="resilience" aria-labelledby="scale-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge text-mono" style="border-color: rgba(255,255,255,0.4); color: rgba(255,255,255,0.8);">
+                        On-Premise &middot; Data Sovereignty
+                    </span>
+                    <h2 id="scale-heading">Your Data Never Leaves Your Walls</h2>
+                    <p>Fully on-premise deployment. Zero cloud dependency. Your documents, your infrastructure, your sovereignty. Designed for organizations where data confidentiality is non-negotiable.</p>
+                </div>
+
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                                <line x1="6" y1="6" x2="6.01" y2="6"/>
+                                <line x1="6" y1="18" x2="6.01" y2="18"/>
+                            </svg>
+                        </div>
+                        <h3>Your Infrastructure, Your Rules</h3>
+                        <p>Archon deploys entirely within your perimeter. Documents are processed locally, knowledge stays on your servers. No external API receives your sensitive data.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <h3>Circuit Breaker Resilience</h3>
+                        <p>Dynamic circuit breakers detect API quota saturation and allow the Swarm to defer gracefully and self-heal. Zero data loss guaranteed, even under heavy load or transient infrastructure storms.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <path d="M14 2v6h6"/>
+                                <path d="M16 13H8"/>
+                                <path d="M16 17H8"/>
+                                <path d="M10 9H8"/>
+                            </svg>
+                        </div>
+                        <h3>Forensic Traceability</h3>
+                        <p>Every action, graph mutation, and agent inference is documented with HMAC cryptographic signatures, tracked via Identity Maps, and auditable across the full decision lineage.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section id="use-cases" class="use-cases" aria-labelledby="usecases-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge text-mono">
+                        <span class="badge-dot" aria-hidden="true"></span>
+                        Industries
+                    </span>
+                    <h2 id="usecases-heading">Built for Critical Sectors</h2>
+                    <p>Archon transforms unstructured documents into certified knowledge graphs. Every fact is forensically signed, every rule compiled to executable logic.</p>
+                </div>
+
+                <div class="use-cases-grid">
+                    <!-- Legal & Compliance -->
+                    <article class="use-case-card">
+                        <div class="use-case-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 1v4M12 19v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M1 12h4M19 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                                <circle cx="12" cy="12" r="4"/>
+                            </svg>
+                        </div>
+                        <h3>Regulatory Compliance</h3>
+                        <p>Process contracts, regulatory documents and ISO frameworks. Detect obligations, conflicting clauses, and missing definitions automatically.</p>
+                        <ul class="use-case-list">
+                            <li>Obligation mapping across multi-document corpora</li>
+                            <li>Conflict detection via graph-based symbolic reasoning</li>
+                            <li>Ontological relations aligned to ISO/BFO/PROV-O</li>
+                        </ul>
+                    </article>
+
+                    <!-- Finance -->
+                    <article class="use-case-card">
+                        <div class="use-case-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <h3>Financial Governance</h3>
+                        <p>Extract risk thresholds, trading rules, and compliance triggers from policy documents. Compile them into deterministic, auditable logic.</p>
+                        <ul class="use-case-list">
+                            <li>IF/THEN rules compiled to deterministic LogicAST</li>
+                            <li>Unit consistency validation across financial instruments</li>
+                            <li>Bayesian confidence scoring with temporal decay</li>
+                        </ul>
+                    </article>
+
+                    <!-- Engineering -->
+                    <article class="use-case-card">
+                        <div class="use-case-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <h3>Technical Documentation</h3>
+                        <p>Transform multi-document specs, design reviews, and operational runbooks into a queryable knowledge graph with full cross-document linking.</p>
+                        <ul class="use-case-list">
+                            <li>PDF, Office, and web content ingestion</li>
+                            <li>Vision-aware chunking (tables, formulas, layouts)</li>
+                            <li>Cross-document relationship discovery</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="comparison" aria-labelledby="comparison-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="comparison-heading">Why Not Just RAG?</h2>
+                    <p>Retrieval-Augmented Generation retrieves text fragments. Archon extracts, validates, normalizes, compiles, and links knowledge into a deterministic, auditable graph.</p>
+                </div>
+
+                <table class="comparison-table" role="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Capability</th>
+                            <th scope="col">RAG / LLM Only</th>
+                            <th scope="col">Archon Neuro-Symbolic</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Knowledge Representation</td>
+                            <td><span class="cross">Flat text chunks in a vector store</span></td>
+                            <td><span class="check">Structured Neo4j knowledge graph with ontological relations</span></td>
+                        </tr>
+                        <tr>
+                            <td>Executable Rules</td>
+                            <td><span class="cross">Rules stay as natural language</span></td>
+                            <td><span class="check">Compiled to LogicAST DDL (93.6% success rate)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Deterministic Verdict</td>
+                            <td><span class="cross">Probabilistic, non-reproducible</span></td>
+                            <td><span class="check">PASS/FAIL deterministic evaluation (zero LLM involved)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Unit &amp; Measurement Handling</td>
+                            <td><span class="cross">No normalization, unit errors undetected</span></td>
+                            <td><span class="check">5,000+ unit types, SI normalization, anti-MCO protection</span></td>
+                        </tr>
+                        <tr>
+                            <td>Forensic Traceability</td>
+                            <td><span class="cross">Black box &mdash; no proof of origin</span></td>
+                            <td><span class="check">HMAC signatures + full decision lineage per fact</span></td>
+                        </tr>
+                        <tr>
+                            <td>Cross-Document Linking</td>
+                            <td><span class="cross">Siloed retrieval, no inter-document reasoning</span></td>
+                            <td><span class="check">Universal ontological relations (ISO/BFO/PROV-O)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Hallucination Resistance</td>
+                            <td><span class="cross">Not verifiable &mdash; trust the LLM</span></td>
+                            <td><span class="check">Quarantine-first : unvalidated facts never enter the graph</span></td>
+                        </tr>
+                        <tr>
+                            <td>Data Sovereignty</td>
+                            <td><span class="cross">Often cloud-dependent (OpenAI, Pinecone...)</span></td>
+                            <td><span class="check">100% on-premise, your data never leaves your walls</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team" aria-labelledby="team-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="team-heading">The Founding Team</h2>
+                    <p>A DeepTech startup bridging the gap between Neural Networks and Classical Symbolic Logic.</p>
+                </div>
+
+                <div class="team-grid">
+                    <article class="team-member">
+                        <div class="avatar text-mono" aria-hidden="true">SM</div>
+                        <h3>Soufiane Moudden</h3>
+                        <div class="team-title text-mono">Chief Executive Officer</div>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">Spearheading Archon's vision to bring zero-hallucination agentic intelligence to domain-agnostic enterprise critical sectors.</p>
+                    </article>
+
+                    <article class="team-member">
+                        <div class="avatar text-mono" aria-hidden="true">HM</div>
+                        <h3>Houssine Meftoul</h3>
+                        <div class="team-title text-mono">Chief Technology Officer</div>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">Lead Architect of the Conformity Engine V4 and the Event-Driven Blackboard Swarm Orchestration.</p>
+                        <a href="https://www.linkedin.com/in/houssine-meftoul-59120276" class="linkedin-link" target="_blank" rel="noopener noreferrer">LinkedIn Profile &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="cta-section" aria-label="Call to action">
+            <div class="container">
+                <h2>Ready to Transform Your Documents?</h2>
+                <p>See what certifiable, auditable AI looks like on your own technical specifications.</p>
+                <a href="mailto:contact@archon-nesy.com" class="btn-primary">
+                    Request Early Access
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
-            <div class="footer-logo text-mono">ARCHON::NESY</div>
-            <p>System status: Phase A (Pre-Seed R&D)</p>
-            
-            <div class="footer-links">
+            <div class="footer-logo">ARCHON <span style="color: var(--symbolic-gold)">Neuro-Symbolic AI</span></div>
+
+            <div class="footer-links" aria-label="Footer navigation">
                 <a href="mailto:contact@archon-nesy.com">Contact Us</a>
-                <a href="#architecture">Technology</a>
+                <a href="#why-archon">Why Archon</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#use-cases">Use Cases</a>
                 <a href="#team">Team</a>
             </div>
-            
-            <p style="font-size: 0.8rem; margin-top: 3rem;">&copy; 2026 Archon Neuro-Symbolic Intelligence. All rights reserved.</p>
+
+            <p class="footer-copy">&copy; 2026 Archon Neuro-Symbolic Intelligence. All rights reserved.</p>
         </div>
     </footer>
+
 </body>
 </html>
