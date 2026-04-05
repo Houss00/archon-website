@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archon V4 | Neuro-Symbolic OS</title>
+    <meta name="description" content="Archon V4 is a deterministic, event-driven, multi-agent operating system combining neural reasoning with symbolic graph conformity.">
+    <!-- Google Fonts for a modern, tech look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --surface-color: #1f2833;
+            --primary-accent: #66fcf1;
+            --secondary-accent: #45a29e;
+            --text-main: #c5c6c7;
+            --text-title: #ffffff;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+        }
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--text-title);
+            letter-spacing: 2px;
+        }
+        .logo span {
+            color: var(--primary-accent);
+        }
+        .hero {
+            padding: 10rem 0 6rem;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(69, 162, 158, 0.1) 0%, transparent 50%);
+        }
+        h1 {
+            font-size: 4rem;
+            color: var(--text-title);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: var(--text-main);
+            font-weight: 300;
+        }
+        .tag {
+            display: inline-block;
+            background-color: rgba(102, 252, 241, 0.1);
+            color: var(--primary-accent);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(102, 252, 241, 0.3);
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-accent);
+            color: var(--bg-color);
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(102, 252, 241, 0.4);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 5rem 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .card {
+            background-color: var(--surface-color);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-accent);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            color: var(--text-title);
+            font-size: 1.4rem;
+            margin-top: 0;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 4rem;
+        }
+        .code-snippet {
+            background-color: #000;
+            padding: 1.5rem;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--secondary-accent);
+            font-size: 0.9rem;
+            text-align: left;
+            margin: 2rem auto;
+            max-width: 600px;
+            border: 1px solid #1f2833;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">ARCHON<span>::</span>NESY</div>
+            <a href="mailto:contact@archon-nesy.com" style="color: var(--text-main); text-decoration: none;">contact@archon-nesy.com</a>
+        </nav>
+
+        <section class="hero">
+            <div class="tag">System.Status: ACTIVE_R_AND_D</div>
+            <h1>Neuro-Symbolic Agentic OS</h1>
+            <p class="subtitle">Where neural inference meets high-fidelity deterministic constraints. Archon V4 orchestrates complex graphs through an Event-Driven Blackboard.</p>
+            
+            <div class="code-snippet">
+                > Initializing Conformity Engine V4...<br>
+                > Establishing Sovereign Bus Connection...<br>
+                > Swarm Agents (Logician, Weaver, Pilot): Online.<br>
+                > Zero-Hallucination mode: ENABLED.
+            </div>
+
+            <a href="mailto:contact@archon-nesy.com" class="cta-button">Join the Waitlist</a>
+        </section>
+
+        <section class="features">
+            <div class="card">
+                <h3>Event-Driven Blackboard</h3>
+                <p>A mission-critical Sovereign Bus running on Redis. The Pilot and the Agent Swarm communicate asynchronously in a strictly managed, decoupled topology for NASA-grade resilience.</p>
+            </div>
+            <div class="card">
+                <h3>Conformity Engine V4</h3>
+                <p>Pure symbolic architecture. Reconciling AI-generated logic with rigid Neo4j data graphs to ensure zero system hallucinations, strict structural sanitization, and flawless dependency propagation.</p>
+            </div>
+            <div class="card">
+                <h3>Multi-Tier Swarm</h3>
+                <p>Heavy duty autonomous agents (Librarian, Logician, Weaver) working in Sequential-Parallel orchestration patterns, equipped with 'CB-Aware Deferral' mechanisms to self-heal and manage API quotas.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Archon V4 is currently in Pre-Seed R&D Phase.</p>
+            <p>&copy; 2026 Archon Neuro-Symbolic AI. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
