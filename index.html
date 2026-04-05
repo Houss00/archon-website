@@ -1,180 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archon V4 | Neuro-Symbolic OS</title>
-    <meta name="description" content="Archon V4 is a deterministic, event-driven, multi-agent operating system combining neural reasoning with symbolic graph conformity.">
-    <!-- Google Fonts for a modern, tech look -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>ARCHON V4 | L'Intelligence Neuro-Symbolique</title>
+    <!-- Polices propres et techniques -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0b0c10;
-            --surface-color: #1f2833;
-            --primary-accent: #66fcf1;
-            --secondary-accent: #45a29e;
-            --text-main: #c5c6c7;
-            --text-title: #ffffff;
+            --bg-cream: #fbfaf6;
+            --neural-blue: #376d9b;
+            --symbolic-gold: #c98e3b;
+            --line-color: #8c9ea8;
         }
+
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-cream);
+            font-family: 'IBM Plex Sans', sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        nav {
+            height: 100vh;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 0;
+            flex-direction: column;
+            overflow-x: hidden;
         }
-        .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--text-title);
+
+        /* Badge en haut à droite */
+        .agnostic-badge {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            border: 1px solid var(--symbolic-gold);
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            max-width: 320px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--symbolic-gold);
+            background-color: transparent;
+            z-index: 10;
+        }
+
+        .agnostic-badge strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Conteneur principal divisé en deux */
+        .split-layout {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Ligne de séparation centrale */
+        .split-layout::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 10%;
+            bottom: 10%;
+            width: 1px;
+            background-color: var(--line-color);
+            transform: translateX(-50%);
+        }
+
+        .side {
+            flex: 1;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .side-neural {
+            text-align: right;
+            padding-right: 4rem;
+        }
+
+        .side-symbolic {
+            text-align: left;
+            padding-left: 4rem;
+        }
+
+        /* Typographie */
+        h1 {
+            font-size: 4.5rem;
+            color: var(--neural-blue);
+            margin: 0 0 1rem 0;
+            font-weight: 400;
             letter-spacing: 2px;
         }
-        .logo span {
-            color: var(--primary-accent);
-        }
-        .hero {
-            padding: 10rem 0 6rem;
-            text-align: center;
-            background: radial-gradient(circle at center, rgba(69, 162, 158, 0.1) 0%, transparent 50%);
-        }
-        h1 {
-            font-size: 4rem;
-            color: var(--text-title);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        .subtitle {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            color: var(--text-main);
+
+        .subtitle-blue {
+            font-size: 1.8rem;
+            color: var(--neural-blue);
+            margin: 0;
             font-weight: 300;
         }
-        .tag {
-            display: inline-block;
-            background-color: rgba(102, 252, 241, 0.1);
-            color: var(--primary-accent);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(102, 252, 241, 0.3);
+
+        .text-gold {
+            font-size: 2rem;
+            color: var(--symbolic-gold);
+            line-height: 1.4;
+            max-width: 500px;
+            margin: 0;
+            font-weight: 400;
         }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-accent);
-            color: var(--bg-color);
-            padding: 1rem 2.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #ffffff;
-            box-shadow: 0 0 20px rgba(102, 252, 241, 0.4);
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 5rem 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-        .card {
-            background-color: var(--surface-color);
-            padding: 2.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--primary-accent);
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .card h3 {
-            color: var(--text-title);
-            font-size: 1.4rem;
-            margin-top: 0;
-            font-family: 'JetBrains Mono', monospace;
-        }
+
+        /* Footer discret (optionnel) */
         footer {
             text-align: center;
-            padding: 3rem 0;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            margin-top: 4rem;
+            padding: 1rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--line-color);
         }
-        .code-snippet {
-            background-color: #000;
-            padding: 1.5rem;
-            border-radius: 6px;
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--secondary-accent);
-            font-size: 0.9rem;
-            text-align: left;
-            margin: 2rem auto;
-            max-width: 600px;
-            border: 1px solid #1f2833;
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        /* Design Responsive pour téléphone */
+        @media (max-width: 900px) {
+            .split-layout {
+                flex-direction: column;
+            }
+            .split-layout::after {
+                width: 80%;
+                height: 1px;
+                left: 10%;
+                top: 50%;
+                bottom: auto;
+                transform: translateY(-50%);
+            }
+            .side-neural {
+                text-align: center;
+                padding: 2rem;
+                padding-top: 8rem;
+            }
+            .side-symbolic {
+                text-align: center;
+                padding: 2rem;
+            }
+            .text-gold {
+                margin: 0 auto;
+            }
+            .agnostic-badge {
+                top: 1rem;
+                right: 1rem;
+                max-width: 250px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <div class="logo">ARCHON<span>::</span>NESY</div>
-            <a href="mailto:contact@archon-nesy.com" style="color: var(--text-main); text-decoration: none;">contact@archon-nesy.com</a>
-        </nav>
 
-        <section class="hero">
-            <div class="tag">System.Status: ACTIVE_R_AND_D</div>
-            <h1>Neuro-Symbolic Agentic OS</h1>
-            <p class="subtitle">Where neural inference meets high-fidelity deterministic constraints. Archon V4 orchestrates complex graphs through an Event-Driven Blackboard.</p>
-            
-            <div class="code-snippet">
-                > Initializing Conformity Engine V4...<br>
-                > Establishing Sovereign Bus Connection...<br>
-                > Swarm Agents (Logician, Weaver, Pilot): Online.<br>
-                > Zero-Hallucination mode: ENABLED.
-            </div>
-
-            <a href="mailto:contact@archon-nesy.com" class="cta-button">Join the Waitlist</a>
-        </section>
-
-        <section class="features">
-            <div class="card">
-                <h3>Event-Driven Blackboard</h3>
-                <p>A mission-critical Sovereign Bus running on Redis. The Pilot and the Agent Swarm communicate asynchronously in a strictly managed, decoupled topology for NASA-grade resilience.</p>
-            </div>
-            <div class="card">
-                <h3>Conformity Engine V4</h3>
-                <p>Pure symbolic architecture. Reconciling AI-generated logic with rigid Neo4j data graphs to ensure zero system hallucinations, strict structural sanitization, and flawless dependency propagation.</p>
-            </div>
-            <div class="card">
-                <h3>Multi-Tier Swarm</h3>
-                <p>Heavy duty autonomous agents (Librarian, Logician, Weaver) working in Sequential-Parallel orchestration patterns, equipped with 'CB-Aware Deferral' mechanisms to self-heal and manage API quotas.</p>
-            </div>
-        </section>
-
-        <footer>
-            <p>Archon V4 is currently in Pre-Seed R&D Phase.</p>
-            <p>&copy; 2026 Archon Neuro-Symbolic AI. All rights reserved.</p>
-        </footer>
+    <div class="agnostic-badge">
+        <strong>DOMAINE AGNOSTIQUE :</strong>
+        Fonctionne sur n'importe quel secteur critique sans aucune réécriture du système.
     </div>
+
+    <div class="split-layout">
+        <!-- Partie Gauche : Neural (Bleu) -->
+        <div class="side side-neural">
+            <h1>ARCHON V4</h1>
+            <p class="subtitle-blue">L'Intelligence Neuro-Symbolique.</p>
+        </div>
+
+        <!-- Partie Droite : Symbolique (Or) -->
+        <div class="side side-symbolic">
+            <p class="text-gold">Vos documents deviennent une connaissance certifiable, traçable et exécutable.</p>
+        </div>
+    </div>
+
+    <footer>
+        <a href="mailto:contact@archon-nesy.com">contact@archon-nesy.com</a>
+    </footer>
+
 </body>
 </html>
-
-
